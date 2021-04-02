@@ -5,3 +5,6 @@
 
 """Minghao Fang: We may need the user to provide some of their information such as their names
 and age in order to become a player in this game."
+
+"""Shirui Dong: Users will need to make decisions with the use of pictures as visuals of different choices/ objects/locations. 
+    Different choices will have an impact on the final outcome."""
