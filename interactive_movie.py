@@ -21,7 +21,6 @@ class Player():
         name(string):
         age(int):
         gender(string):
-        hp(float):
     """
     def __init__():
         
@@ -37,7 +36,9 @@ class Input(path):
         """
         
     def location():
-        """
+        """ Getting random location from the csv file to fill in the script
+            Returns: 
+                location(str): location from csv file that is randomally picked
         """
         
     def weapon():
@@ -49,11 +50,15 @@ class Input(path):
         """
         
     def item():
-        """
+        """ Getting random item from csv file to fill in the script
+            Returns:
+                item(str): name of randomally picked item from csv file
         """
         
     def pet():
-        """
+        """ Getting random pet from csv file to fill in the script
+            Returns:
+                pet(str): name of pet that is randomally picked from csv file
         """
         
 class Fight():
