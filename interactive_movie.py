@@ -11,6 +11,7 @@ Shirui Dong: Users will need to make decisions with the use of pictures as visua
 
 def main():
     """ This is where the story occurs. We will have the main script here.
+        Side effect: printing story
     """
     
 class Player():
