@@ -11,6 +11,7 @@ Shirui Dong: Users will need to make decisions with the use of pictures as visua
 class Main():
     """ This is where the story occurs.
     """
+    
 class Player():
     """ Gets information from user 
     
@@ -21,12 +22,41 @@ class Player():
         hp(float):
     """
     def __init__():
-class Weapons():
+        
+class Input(path):
+    """ This is where we collect the random infomation from the csv file to
+        incorprate into the story
+        
+        attributes:
+            path: location of csv file 
+    """
+    def __init__():
+        """
+        """
+        
+    def location():
+        """
+        """
+        
+    def weapon():
+        """
+        """
+        
+    def enemy():
+        """
+        """
+        
+    def item():
+        """
+        """
+        
+    def pet():
+        """
+        """
+        
+class Fight():
     """
     """
     def __init__():
-class Enemy():
-    """
-    """
-    def __init__():
+        
 if __name__ == "__main__":
