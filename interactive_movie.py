@@ -8,12 +8,10 @@ and age in order to become a player in this game."
 
 Shirui Dong: Users will need to make decisions with the use of pictures as visuals of different choices/ objects/locations
 """
-class Main():
-    """ This is where the story occurs.
+
+def main():
+    """ This is where the story occurs. We will have the main script here.
     """
-    def main():
-        """
-        """
     
 class Player():
     """ Gets information from user 
