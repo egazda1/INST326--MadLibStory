@@ -15,30 +15,30 @@ def main():
     """
     
 class Player():
-    """ Gets information from user 
+    """ Ask user to input their information, such as name, gender and age so they can become part of the game 
     
     Attributes:
-        name(string): the users name 
-        age(int): the users age 
-        gender(string): the users gender 
+        name(str): name of the user
+        age(int): age of the user 
+        gender(str): gender of the user
     """
             
     def Name():
-        """ user inputs their name 
+        """ let user input their name
             returns:
-                name(str): the users name 
+                name(str): name of the user
         """
         
     def age():
-        """ user inputs their age 
+        """ let user inputs their age 
             returns:
-                age(int): the users age 
+                age(int): age of the user
         """
         
     def gender():
-        """ user inputs their gender 
+        """ let user inputs their gender 
             returns:
-                gender(str): the users gender 
+                gender(str): gender of the user
         """
     
         
