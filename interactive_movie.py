@@ -14,7 +14,7 @@ def main():
         Side effect: printing story
     """
     
-class Player:
+class Player():
     """ Gets information from user 
     
     Attributes:
@@ -86,14 +86,26 @@ class extraction:
         """
         
         
-class Fight:
-    """
+class Fight():
+    """ Show the results of the battle, such as the remaining HP of the player and the enemy
     """
     def __init__():
         
     def attack():
+        """ Getting the result of an attack
+            Returns:
+                damage(int): how many damage was made from this attack
+        """
         
-    def defend():
+    def hp_of_player():
+        """ Getting the remain HP of the player
+            Returns:
+                boolean: if hp of player is less than 0, game over.
+        """
         
-        
+    def hp_of_enemy():
+        """ Getting the remain HP of the enemy
+            Returns:
+                boolean: if hp of enemy is less than 0, then the player goes to next location.
+        """
 if __name__ == "__main__":
