@@ -11,6 +11,7 @@ Shirui Dong: Users will need to make decisions with the use of pictures as visua
 class Main():
     """ This is where the story occurs.
     """
+    def main():
     
 class Player():
     """ Gets information from user 
