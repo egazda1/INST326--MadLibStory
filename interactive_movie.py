@@ -13,7 +13,6 @@ def main():
     """ This is where the story occurs. We will have the main script here.
         Side effect: printing story
     """
-    if __name__ == "__main__":
     
 class Player():
     """ Ask user to input their information, such as name, gender and age so they can become part of the game 
@@ -108,3 +107,5 @@ class Fight():
             Returns:
                 hp_of_enemy(int): The remaining hp of the enemy
         """
+if __name__ == "__main__":
+    main（）
