@@ -18,22 +18,42 @@ class Player():
     """ Gets information from user 
     
     Attributes:
-        name(string):
-        age(int):
-        gender(string):
+        name(string): the users name 
+        age(int): the users age 
+        gender(string): the users gender 
     """
-    def __init__():
+            
+    def Name():
+        """ user inputs their name 
+            returns:
+                name(str): the users name 
+        """
         
-class Input(path):
+    def age():
+        """ user inputs their age 
+            returns:
+                age(int): the users age 
+        """
+        
+    def gender():
+        """ user inputs their gender 
+            returns:
+                gender(str): the users gender 
+        """
+    
+        
+class extraction:
     """ This is where we collect the random infomation from the csv file to
         incorprate into the story
         
-        attributes:
-            path: location of csv file 
+         
     """
-    def __init__():
+    def __init__(self, path):
+        """initializing new path object
+            attributes:
+                path(str): location of csv file
         """
-        """
+        
         
     def location():
         """ Getting random location from the csv file to fill in the script
@@ -42,11 +62,15 @@ class Input(path):
         """
         
     def weapon():
-        """
+        """Getting random item from csv file to fill in the script
+            Returns:
+                item(str): name of randomally picked weapon from csv file
         """
         
     def enemy():
-        """
+        """Getting random item from csv file to fill in the script
+            Returns:
+                enemy(str): name of randomally picked enemy from csv file
         """
         
     def item():
@@ -61,9 +85,15 @@ class Input(path):
                 pet(str): name of pet that is randomally picked from csv file
         """
         
+        
 class Fight():
     """
     """
     def __init__():
+        
+    def attack():
+        
+    def defend():
+        
         
 if __name__ == "__main__":
