@@ -89,7 +89,6 @@ class extraction:
 class Fight():
     """ Show the results of the battle, such as the remaining HP of the player and the enemy
     """
-    def __init__():
         
     def attack():
         """ Getting the result of an attack
@@ -97,7 +96,7 @@ class Fight():
                 damage(int): how many damage was made from this attack
         """
         
-    def hp_of_player():
+    def hp_of_player(hp = 500):
         """ Getting the remain HP of the player
             Returns:
                 hp_of_player(int): The remaining hp of the player
