@@ -62,13 +62,13 @@ class extraction:
         """
         
     def weapon():
-        """Getting random item from csv file to fill in the script
+        """Getting random weapon from csv file to fill in the script
             Returns:
-                item(str): name of randomally picked weapon from csv file
+                weapon(str): name of randomally picked weapon from csv file
         """
         
     def enemy():
-        """Getting random item from csv file to fill in the script
+        """Getting random enemy from csv file to fill in the script
             Returns:
                 enemy(str): name of randomally picked enemy from csv file
         """
