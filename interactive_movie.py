@@ -14,7 +14,7 @@ def main():
         Side effect: printing story
     """
     
-class Player():
+class Player:
     """ Gets information from user 
     
     Attributes:
@@ -86,7 +86,7 @@ class extraction:
         """
         
         
-class Fight():
+class Fight:
     """
     """
     def __init__():
