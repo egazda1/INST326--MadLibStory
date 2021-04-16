@@ -100,12 +100,12 @@ class Fight():
     def hp_of_player():
         """ Getting the remain HP of the player
             Returns:
-                boolean: if hp of player is less than 0, game over.
+                hp_of_player(int): The remaining hp of the player
         """
         
     def hp_of_enemy():
         """ Getting the remain HP of the enemy
             Returns:
-                boolean: if hp of enemy is less than 0, then the player goes to next location.
+                hp_of_enemy(int): The remaining hp of the enemy
         """
 if __name__ == "__main__":
