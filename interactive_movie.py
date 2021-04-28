@@ -15,34 +15,19 @@ def main():
     """
     
 class Player():
-    """ Ask user to input their information, such as name, gender and age so they can become part of the game 
+    """ Ask users to input their information, such as name, age and gender so they can become part of the game.
     
     Attributes:
-        name(str): name of the user
-        age(int): age of the user 
-        gender(str): gender of the user
+        name(str): name of the user.
+        age(int): age of the user.
+        gender(str): gender of the user.
     """
     def __init__(self, name, age, gender):
+        self.name = name
+        self.age = age
+        self.gender = gender
         
-            
-    def name():
-        """ let user input their name
-            returns:
-                name(str): name of the user
-        """
         
-    def age():
-        """ let user inputs their age 
-            returns:
-                age(int): age of the user
-        """
-        
-    def gender():
-        """ let user inputs their gender 
-            returns:
-                gender(str): gender of the user
-        """
-    
         
 class extraction:
     """ This is where we collect the random infomation from the csv file to
