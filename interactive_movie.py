@@ -9,6 +9,9 @@ and age in order to become a player in this game."
 Shirui Dong: Users will need to make decisions with the use of pictures as visuals of different choices/ objects/locations
 """
 
+import pandas as pd
+import random
+
 def main():
     """ This is where the story occurs. We will have the main script here.
         Side effect: printing story
@@ -36,38 +39,40 @@ class extraction:
         
          
     """
-    def __init__(self, path):
+    def __init__(self, filepath):
         """initializing new path object
             attributes:
-                path(str): location of csv file
+                filepath(str): location of csv file
         """
-    
+        self.df = pd.read_csv(filepath)
         
-    def location():
+    def location(self):
         """ Getting random location from the csv file to fill in the script
             Returns: 
                 location(str): location from csv file that is randomally picked
         """
+        location_list = self.df["Location"].to_list()
+        return (random.choice(location_list))
         
-    def weapon():
+    def weapon(self):
         """Getting random weapon from csv file to fill in the script
             Returns:
                 weapon(str): name of randomally picked weapon from csv file
         """
         
-    def enemy():
+    def enemy(self):
         """Getting random enemy from csv file to fill in the script
             Returns:
                 enemy(str): name of randomally picked enemy from csv file
         """
         
-    def item():
+    def item(self):
         """ Getting random item from csv file to fill in the script
             Returns:
                 item(str): name of randomally picked item from csv file
         """
         
-    def pet():
+    def pet(self):
         """ Getting random pet from csv file to fill in the script
             Returns:
                 pet(str): name of pet that is randomally picked from csv file
