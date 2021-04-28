@@ -23,9 +23,10 @@ class Player():
         gender(str): gender of the user.
     """
     def __init__(self, name, age, gender):
-        self.name = name
-        self.age = age
-        self.gender = gender
+        self.name = str(input("Enter your name: "))
+        self.age = int(input("Enter your age: "))
+        self.gender = str(input("Enter your gender: "))
+        print ("Player's information: ", self.name, self.age, self.gender)
         
         
         
