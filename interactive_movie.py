@@ -22,6 +22,8 @@ class Player():
         age(int): age of the user 
         gender(str): gender of the user
     """
+    def __init__():
+        
             
     def Name():
         """ let user input their name
