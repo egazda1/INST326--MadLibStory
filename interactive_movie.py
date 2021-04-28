@@ -9,8 +9,6 @@ and age in order to become a player in this game."
 Shirui Dong: Users will need to make decisions with the use of pictures as visuals of different choices/ objects/locations
 """
 
-import pandas as pd
-
 def main():
     """ This is where the story occurs. We will have the main script here.
         Side effect: printing story
@@ -43,7 +41,7 @@ class extraction:
             attributes:
                 path(str): location of csv file
         """
-     df = pd.read_csv("extraction.csv")   
+    
         
     def location():
         """ Getting random location from the csv file to fill in the script
