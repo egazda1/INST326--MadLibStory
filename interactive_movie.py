@@ -71,6 +71,8 @@ class extraction:
             Returns:
                 item(str): name of randomally picked item from csv file
         """
+        item_list = self.df["Item"].to_list()
+        return (random.choice(item_list))
         
     def pet(self):
         """ Getting random pet from csv file to fill in the script
