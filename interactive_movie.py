@@ -16,15 +16,28 @@ def main():
     """ This is where the story occurs. We will have the main script here.
         Side effect: printing story
     """
-    if Player.gender == "female" or Player.gender == "f":
-        print(f"Once upon a time there was a {Person.age} year old girl named {Person.name}. One day she was walking down a path 
-              in/on the {extraction.location} with a {extraction.item}.")
-    elif Player.gender == "male" or Player.gender == "m":
-        print(f"Once upon a time there was a {Person.age} year old boy named {Person.name}. One day he was walking down a path 
-              in/on the {extraction.location} with a {extraction.item}.")
+    person = Player()
+    extract = Extraction("extraction1.xlsx")
+    
+    name = person.return_name()
+    age = person.return_age()
+    gender = person.return_gender()
+    
+    location = extract.location()
+    item = extract.item()
+    
+    if gender == "female" or gender == "f":
+        print(f"Once upon a time there was a {age} year old girl named {name}." 
+              f" One day she was walking down a path in/on the" 
+              f" {location} with a {item}.")
+    elif gender == "male" or gender == "m":
+        print(f"Once upon a time there was a {age} year old boy named {name}." 
+              f" One day he was walking down a path in/on the {location} with a"
+              f" {item}.")
     else: 
-        print(f"Once upon a time there was a {Person.age} year old person named {Person.name}. One day they were walking down a path 
-              in/on the {extraction.location} with a {extraction.item}.") 
+        print(f"Once upon a time there was a {age} year old person named {name}."
+              f" One day they were walking down a path in/on the {location}"
+              f" with a {item}.") 
               
     
 class Player():
@@ -39,11 +52,18 @@ class Player():
         self.name = str(input("Enter your name: "))
         self.age = int(input("Enter your age: "))
         self.gender = str(input("Enter your gender: "))
-        print ("Player's information: ", self.name, self.age, self.gender)
+    
+    def return_name(self):
+        return self.name
+        
+    def return_age(self):
+        return self.age
+    
+    def return_gender(self):
+        return self.gender
         
         
-        
-class extraction:
+class Extraction:
     """ This is where we collect the random infomation from the csv file to
         incorprate into the story
         
@@ -54,7 +74,7 @@ class extraction:
             attributes:
                 filepath(str): location of csv file
         """
-        self.df = pd.read_csv(filepath)
+        self.df = pd.read_excel(filepath)
         
     def location(self):
         """ Getting random location from the csv file to fill in the script
@@ -113,4 +133,4 @@ class Fight():
                 hp_of_enemy(int): The remaining hp of the enemy
         """
 if __name__ == "__main__":
-    main（）
+    main()
