@@ -16,6 +16,16 @@ def main():
     """ This is where the story occurs. We will have the main script here.
         Side effect: printing story
     """
+    if Player.gender == "female" or Player.gender == "f":
+        print(f"Once upon a time there was a {Person.age} year old girl named {Person.name}. One day she was walking down a path 
+              in/on the {extraction.location} with a {extraction.item}.")
+    elif Player.gender == "male" or Player.gender == "m":
+        print(f"Once upon a time there was a {Person.age} year old boy named {Person.name}. One day he was walking down a path 
+              in/on the {extraction.location} with a {extraction.item}.")
+    else: 
+        print(f"Once upon a time there was a {Person.age} year old person named {Person.name}. One day they were walking down a path 
+              in/on the {extraction.location} with a {extraction.item}.") 
+              
     
 class Player():
     """ Ask users to input their information, such as name, age and gender so they can become part of the game.
