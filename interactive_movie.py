@@ -59,11 +59,6 @@ class Player():
             the printing of a line
         """
         
-    def dodge():
-        """ the user would dodge the attack of enemy.
-            num(int): randomly chosen 0 or 1 (1 = dodge, 0 = no dodge)
-        """
-        
     
 class Enemy:
     """ Collect the information on enemy and turn it into an instance. 
@@ -162,28 +157,6 @@ class Extraction:
         """
         enemy_hp_list = self.df["Hp"].to_list()
         return (random.choice(enemy_hp_list))
-        
-class Fight():
-    """ Show the results of the battle, such as the remaining HP of the player and the enemy
-    """
-        
-    def attack():
-        """ Getting the result of an attack
-            Returns:
-                damage(int): how many damage was made from this attack
-        """
-        
-    def hp_of_player(hp = 500):
-        """ Getting the remain HP of the player
-            Returns:
-                hp_of_player(int): The remaining hp of the player
-        """
-        
-    def hp_of_enemy():
-        """ Getting the remain HP of the enemy
-            Returns:
-                hp_of_enemy(int): The remaining hp of the enemy
-        """
         
 def battle(user, opp, pause = 2.0): 
     """ Stage a battle between user and enemy.
