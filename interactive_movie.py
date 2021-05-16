@@ -125,6 +125,38 @@ class Extraction:
         """
         pet_list = self.df["Pet"].to_list()
         return (random.choice(pet_list))
+    
+    def weapon_damage(self):
+        """ Getting random weapon_damage from csv file to fill in the script
+            Returns:
+                weapon_damage(int): damage of weapon that is randomally picked from csv file
+        """
+        weapon_damage_list = self.df["Weapon_damage"].to_list()
+        return (random.choice(weapon_damage_list))
+    
+    def damage_dealt(self):
+        """ Getting random damage_dealt from csv file to fill in the script
+            Returns:
+                damage_dealt(int): damage dealt that is randomally picked from csv file
+        """
+        damage_dealt_list = self.df["Damage_dealt"].to_list()
+        return (random.choice(damage_dealt_list))
+    
+    def weapon_damage(self):
+        """ Getting random weapon_damage from csv file to fill in the script
+            Returns:
+                weapon_damage(int): damage of weapon that is randomally picked from csv file
+        """
+        weapon_damage_list = self.df["Weapon_damage"].to_list()
+        return (random.choice(weapon_damage_list))
+    
+    def enemy_hp(self):
+        """ Getting hp of enemy from csv file to fill in the script
+            Returns:
+                enemy_hp(int): hp of enemy that is randomally picked from csv file
+        """
+        enemy_hp_list = self.df["Hp"].to_list()
+        return (random.choice(enemy_hp_list))
         
 class Fight():
     """ Show the results of the battle, such as the remaining HP of the player and the enemy
