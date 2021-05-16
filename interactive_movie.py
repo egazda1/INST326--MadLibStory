@@ -5,12 +5,12 @@ def main():
     """ This is where the story occurs. We will have the main script here.
         Side effect: printing story
     """
-    person = Player()
+    person = Person()
     extract = Extraction("extraction1.xlsx")
     
-    name = person.return_name()
-    age = person.return_age()
-    gender = person.return_gender()
+    name = Person.return_name()
+    age = Person.return_age()
+    gender = Person.return_gender()
     
     location = extract.location()
     item = extract.item()
@@ -29,7 +29,7 @@ def main():
               f" with a {item}.") 
               
     
-class Player():
+class Person:
     """ Ask users to input their information, such as name, age and gender so they can become part of the game.
     
     Attributes:
@@ -51,6 +51,20 @@ class Player():
     def return_gender(self):
         return self.gender
     
+
+ class User:
+    """ Collect the information on user and turn it into an instance. 
+
+        Attributes:
+            name(str): name of user
+            damage(float): the damage implimented by the user's weapon
+            hp(float): representing the user's health points
+    """ 
+    def __init__(self, name, damage, hp = 500):
+        self.name = name
+        self.damage = damage
+        self.hp = hp
+        
     def attack(self, opponent):
         """ Used to set attributes as objects.        
         Args:  
