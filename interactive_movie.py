@@ -99,13 +99,17 @@ class Extraction:
             Returns:
                 weapon(str): name of randomally picked weapon from csv file
         """
+        weapon_list = self.df["Weapon"].to_list()
+        return (random.choice(weapon_list))
         
     def enemy(self):
         """Getting random enemy from csv file to fill in the script
             Returns:
                 enemy(str): name of randomally picked enemy from csv file
         """
-        
+        enemy_list = self.df["Enemy"].to_list()
+        return (random.choice(enemy_list))
+    
     def item(self):
         """ Getting random item from csv file to fill in the script
             Returns:
@@ -119,7 +123,8 @@ class Extraction:
             Returns:
                 pet(str): name of pet that is randomally picked from csv file
         """
-        
+        pet_list = self.df["Pet"].to_list()
+        return (random.choice(pet_list))
         
 class Fight():
     """ Show the results of the battle, such as the remaining HP of the player and the enemy
