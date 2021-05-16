@@ -1,14 +1,3 @@
-""" Lauren: A text-based video game that acts as an interactive movie. 
-    Users will be able to make choices that affect the outcome of the story. 
-    
-Emily: There will be two story lines and we might take information from files
-
-Minghao Fang: We may need the user to provide some of their information such as their names
-and age in order to become a player in this game."
-
-Shirui Dong: Users will need to make decisions with the use of pictures as visuals of different choices/ objects/locations
-"""
-
 import pandas as pd
 import random
 
@@ -61,7 +50,28 @@ class Player():
     
     def return_gender(self):
         return self.gender
+    
+class Fighter:
+    """ Collect the information on enemy and turn it into an instance. 
+
+        Attributes:
+            name(str): name of fighter
+            damage(float): the damage implimented by the enemy/ or the damage 
+            implimented by the user and their weapon.
+            hp(float): representing the fighter's health points
+    """ 
+    def __init__(self, name, damage, hp):
+        self.name = name
+        self.damage = damage
+        self.hp = hp
         
+    def attack(self, opponent):
+        """ Used to set attributes as objects.        
+        Args:  
+            opponent: the aardvark’s opponent
+        Side effects:
+            the printing of a line  
+        """
         
 class Extraction:
     """ This is where we collect the random infomation from the csv file to
@@ -132,5 +142,21 @@ class Fight():
             Returns:
                 hp_of_enemy(int): The remaining hp of the enemy
         """
+        
+def battle(user, opp, pause = 2.0): 
+    """ Stage a battle between user and enemy.
+    
+    Args:
+        enemy (str): The name of the enemy, randomly taken from the csv file.
+        user (str): Name of user, taken from user input.
+        pause (float): an amount of time in seconds to pause between attacks in
+            a battle. Allows the user time to read the outcome of each attack.
+            Default: 2.0.
+        
+    Side effects:
+        print (string): printing play by play actions 
+    """
+    
+
 if __name__ == "__main__":
     main()
