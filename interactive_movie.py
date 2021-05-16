@@ -51,6 +51,19 @@ class Player():
     def return_gender(self):
         return self.gender
     
+    def attack(self, opponent):
+        """ Used to set attributes as objects.        
+        Args:  
+            opponent: the user's opponent
+        Side effects:
+            the printing of a line
+        """
+        
+    def dodge():
+        """ the user would dodge the attack of enemy.
+        """
+        
+    
 class Fighter:
     """ Collect the information on enemy and turn it into an instance. 
 
@@ -68,7 +81,7 @@ class Fighter:
     def attack(self, opponent):
         """ Used to set attributes as objects.        
         Args:  
-            opponent: the aardvark’s opponent
+            opponent: the enemy's opponent
         Side effects:
             the printing of a line  
         """
