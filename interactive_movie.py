@@ -61,17 +61,17 @@ class Player():
         
     def dodge():
         """ the user would dodge the attack of enemy.
+            num(int): randomly chosen 0 or 1 (1 = dodge, 0 = no dodge)
         """
         
     
-class Fighter:
+class Enemy:
     """ Collect the information on enemy and turn it into an instance. 
 
         Attributes:
-            name(str): name of fighter
-            damage(float): the damage implimented by the enemy/ or the damage 
-            implimented by the user and their weapon.
-            hp(float): representing the fighter's health points
+            name(str): name of Enemy
+            damage(float): the damage implimented by the enemy
+            hp(float): representing the enemy's health points
     """ 
     def __init__(self, name, damage, hp):
         self.name = name
