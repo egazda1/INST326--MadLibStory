@@ -60,7 +60,7 @@ class Fighter:
             implimented by the user and their weapon.
             hp(float): representing the fighter's health points
     """ 
-    def __init__(self, name, damage, hp):
+    def __init__(self, name, damage, hp = 500):
         self.name = name
         self.damage = damage
         self.hp = hp
