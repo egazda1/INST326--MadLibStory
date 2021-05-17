@@ -27,7 +27,10 @@ def main():
         print(f"Once upon a time there was a {age} year old person named {name}."
               f" One day they were walking down a path in/on the {location}"
               f" with a {item}.") 
-              
+    
+    # make the storyline a sort of quest.
+    # recomendations (you can do other stuff)
+    # someone came to user with quest. get to __ but have to defeat 3 enemies on the way
     
 class Person:
     """ Ask users to input their information, such as name, age and gender so they can become part of the game.
@@ -183,9 +186,29 @@ def battle(user, opp, pause = 2.0):
             Default: 2.0.
         
     Side effects:
-        print (string): printing play by play actions 
+        print (string): printing play by play actions of battle
     """
+    while user.hp > 0 and opp.hp > 0: 
+        # user and enemy attack eachother 
+        user.attack(opp)
+        opp.attack(user)
     
+        # print health points for each fighter
+        print("%s has %s health points." % (a1.name, a1.hp))
+        print("%s has %s health points." % (a2.name, a2.hp))
+        
+        # print blank line and wait 2 seconds
+        print()
+        sleep(pause)
+    
+    #print conclusion of battle
+    if user.hp <= 0 and .hp <= 0:
+        print("The battle ends in a draw. You have not completed your quest.")
+    else: 
+        if user.hp < opp.hp:
+            print("%s wins. You have not completed your quest." % (opp.name))
+        elif user.hp > opp.hp:
+            print("%s wins!" % (user.name))
 
 if __name__ == "__main__":
     main()
