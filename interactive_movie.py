@@ -208,7 +208,7 @@ def battle(user, opp, pause = 2.0):
         if user.hp < opp.hp:
             print("%s wins. You have not completed your quest." % (opp.name))
         elif user.hp > opp.hp:
-            print("%s wins!" % (user.name))
+            print("%s wins! You get to move on." % (user.name))
 
 if __name__ == "__main__":
     main()
