@@ -75,7 +75,9 @@ class Person:
         Side effects:
             the printing of a line
         """
-        
+        damage = self.weapon_damage
+        opponent.hp = opponent.hp - damage
+        print("%s does %s damage to %s" % (self.name, damage, opponent.name))
     
 class Enemy:
     """ Collect the information on enemy and turn it into an instance. 
