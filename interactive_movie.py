@@ -3,24 +3,48 @@ import random
 from time import sleep
        
 class Get1:
+    """ Get information of the user.
+    Attributes:
+        user_name(str): name of the user.
+        weapon_damage(int): weapon damage that the user can do to enemy.
+        user_hp(int): health points of the user.
+    """
     def __init__(self, user_name, weapon_damage, user_hp = 500):
         self.name = user_name
         self.damage = weapon_damage
         self.hp = user_hp
     
     def get_user(self, name):
+        """ Used to return information of the user.        
+        Args:  
+            name(str): the user's name.
+        Returns:
+            the printing of information of the user.
+        """
         name = self.name
         damage = self.damage
         hp = self.hp
         return User(name, damage, hp)
 
 class Get2:
+    """ Get information of the enemy.    
+    Attributes:
+        enemy_name(str): name of the enemy.
+        enemy_damage(int): enemy damage that the enemy can do to user.
+        enemy_hp(int): health points of the enemy.
+    """
     def __init__(self, enemy_name, enemy_damage, enemy_hp):
         self.name = enemy_name
         self.damage = enemy_damage
         self.hp = enemy_hp
     
     def get_enemy(self, name):
+        """ Used to list information of the enemy.        
+        Args:  
+            name(str): the enemy's name.
+        Returns:
+            the printing of information of the enemy.
+        """
         name = self.name
         damage = self.damage
         hp = self.hp
@@ -28,7 +52,6 @@ class Get2:
     
 class Person:
     """ Ask users to input their information, such as name, age and gender so they can become part of the game.
-    
     Attributes:
         name(str): name of the user.
         age(int): age of the user.
@@ -51,11 +74,10 @@ class Person:
 
 class User:
     """ Collect the information on user and turn it into an instance. 
-
-        Attributes:
-            name(str): name of user
-            damage(float): the damage implimented by the user's weapon
-            hp(float): representing the user's health points
+    Attributes:
+        name(str): name of user.
+        damage(int): the damage implimented by the user's weapon.
+        hp(int): representing the user's health points.
     """ 
     def __init__(self, name, damage, hp = 500):
         self.name = name
@@ -65,9 +87,9 @@ class User:
     def attack(self, opponent):
         """ Used to set attributes as objects.        
         Args:  
-            opponent: the user's opponent
+            opponent(str): the user's opponent.
         Side effects:
-            the printing of a line
+            print(str): the printing of a line.
         """
         damage = self.damage
         opponent.hp = opponent.hp - damage
@@ -75,11 +97,10 @@ class User:
     
 class Enemy:
     """ Collect the information on enemy and turn it into an instance. 
-
-        Attributes:
-            name(str): name of Enemy
-            damage(float): the damage implimented by the enemy
-            hp(float): representing the enemy's health points
+    Attributes:
+        name(str): name of enemy.
+        damage(int): the damage implimented by the enemy.
+        hp(int): representing the enemy's health points.
     """ 
     def __init__(self, name, damage, hp):
         self.name = name
@@ -89,9 +110,9 @@ class Enemy:
     def attack(self, opponent):
         """ Used to set attributes as objects.        
         Args:  
-            opponent: the enemy's opponent
+            opponent(str): the enemy's opponent.
         Side effects:
-            the printing of a line  
+            print(str): the printing of a line.  
         """
         rand = random.randint(0, 1)
         
@@ -104,93 +125,87 @@ class Enemy:
         
 class Extraction:
     """ This is where we collect the random infomation from the csv file to
-        incorprate into the story
-        
-         
+        incorprate into the story.
+    Attributes:
+        filepath(str): location of the csv file.    
     """
     def __init__(self, filepath):
-        """initializing new path object
-            attributes:
-                filepath(str): location of csv file
-        """
         self.df = pd.read_excel(filepath)
         
     def location(self):
-        """ Getting random location from the csv file to fill in the script
-            Returns: 
-                location(str): location from csv file that is randomally picked
+        """ Getting random location from the csv file to fill in the script.
+        Returns: 
+            location(str): location from csv file that is randomally picked.
         """
         location_list = self.df["Location"].to_list()
         return (random.choice(location_list))
         
     def weapon(self):
-        """Getting random weapon from csv file to fill in the script
-            Returns:
-                weapon(str): name of randomally picked weapon from csv file
+        """Getting random weapon from csv file to fill in the script.
+        Returns:
+            weapon(str): name of randomally picked weapon from csv file.
         """
         weapon_list = self.df["Weapons"].to_list()
         return (random.choice(weapon_list))
         
     def enemy(self):
-        """Getting random enemy from csv file to fill in the script
-            Returns:
-                enemy(str): name of randomally picked enemy from csv file
+        """Getting random enemy from csv file to fill in the script.
+        Returns:
+            enemy(str): name of randomally picked enemy from csv file.
         """
         enemy_list = self.df["Enemy"].to_list()
         return (random.choice(enemy_list))
     
     def item(self):
-        """ Getting random item from csv file to fill in the script
-            Returns:
-                item(str): name of randomally picked item from csv file
+        """ Getting random item from csv file to fill in the script.
+        Returns:
+            item(str): name of randomally picked item from csv file.
         """
         item_list = self.df["Item"].to_list()
         return (random.choice(item_list))
         
     def pet(self):
-        """ Getting random pet from csv file to fill in the script
-            Returns:
-                pet(str): name of pet that is randomally picked from csv file
+        """ Getting random pet from csv file to fill in the script.
+        Returns:
+            pet(str): name of pet that is randomally picked from csv file.
         """
         pet_list = self.df["Pet"].to_list()
         return (random.choice(pet_list))
     
     def weapon_damage(self):
-        """ Getting random weapon_damage from csv file to fill in the script
-            Returns:
-                weapon_damage(int): damage of weapon that is randomally picked from csv file
+        """ Getting random weapon_damage from csv file to fill in the script.
+        Returns:
+            weapon_damage(int): damage of weapon that is randomally picked from csv file.
         """
         weapon_damage_list = self.df["Weapon_damage"].to_list()
         return (random.choice(weapon_damage_list))
     
     def damage_dealt(self):
-        """ Getting random damage_dealt from csv file to fill in the script
-            Returns:
-                damage_dealt(int): damage dealt that is randomally picked from csv file
+        """ Getting random damage_dealt from csv file to fill in the script.
+        Returns:
+            damage_dealt(int): damage dealt that is randomally picked from csv file.
         """
         damage_dealt_list = self.df["Damage_dealt"].to_list()
         return (random.choice(damage_dealt_list))
     
     def enemy_hp(self):
-        """ Getting hp of enemy from csv file to fill in the script
-            Returns:
-                enemy_hp(int): hp of enemy that is randomally picked from csv file
+        """ Getting hp of enemy from csv file to fill in the script.
+        Returns:
+            enemy_hp(int): hp of enemy that is randomally picked from csv file.
         """
         enemy_hp_list = self.df["Hp"].to_list()
         return (random.choice(enemy_hp_list))
         
 def battle(user, opp, pause = 3.0): 
     """ Stage a battle between user and enemy.
-    
     Args:
-        enemy (str): The name of the enemy, randomly taken from the csv file.
-        user (str): Name of user, taken from user input.
-        pause (float): an amount of time in seconds to pause between attacks in
+        user(str): The name of the enemy, randomly taken from the csv file.
+        opp(str): Name of user, taken from user input.
+        pause(float): an amount of time in seconds to pause between attacks in
             a battle. Allows the user time to read the outcome of each attack.
-            Default: 2.0.
-        
+            Default: 3.0.      
     Side effects:
-        print (string): printing play by play actions of battle
+        print(string): printing play by play actions of battle
     """
     while user.hp > 0 and opp.hp > 0: 
         # user and enemy attack eachother 
@@ -253,7 +268,6 @@ def main():
          f"continued down the path and were first approached by an unidentified figure. " 
          f"As they got closer they realized it was {enemy_name}. They pulled out their {weapon} " 
          f" and attacked them. Their first battle started.")
-    
     
     enemy = Get2(enemy_name, damage_dealt, enemy_hp).get_enemy(enemy_name)     
     user = Get1(name, weapon_damage).get_user(name)
