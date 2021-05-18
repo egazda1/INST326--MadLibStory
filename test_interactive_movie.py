@@ -156,3 +156,154 @@ def test_attack_enemy_docstring_contents():
         "attack() method docstring has no 'Args:' section"
     assert "Returns:" in docstr, \
         "attack() method docstring has no 'Returns:' section"
+
+def test_extraction_docstring_exists():
+    """Does Extraction class have a class docstring?"""
+    docstr = movie.Extraction.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "Extraction class has no class docstring"
+
+def test_extraction_docstring_contents():
+    """Does Extraction class docstring have an Attributes: section?"""
+    assert "Attributes:" in movie.Extraction.__doc__, \
+        "Extraction class docstring has no 'Attributes:' section"
+        
+def test_location_docstring_exists():
+    """Does location() have a docstring?"""
+    docstr = movie.Extraction.location.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "location() method has no docstring"
+
+def test_location_docstring_contents():
+    """Does location() docstring have the correct sections?"""
+    docstr = movie.Extraction.location.__doc__
+    assert "Args:" in docstr, \
+        "location() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "location() method docstring has no 'Returns:' section"
+        
+def test_weapon_docstring_exists():
+    """Does weapon() have a docstring?"""
+    docstr = movie.Extraction.weapon.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "weapon() method has no docstring"
+
+def test_weapon_docstring_contents():
+    """Does weapon() docstring have the correct sections?"""
+    docstr = movie.Extraction.weapon.__doc__
+    assert "Args:" in docstr, \
+        "weapon() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "weapon() method docstring has no 'Returns:' section"      
+        
+def test_enemy_docstring_exists():
+    """Does enemy() have a docstring?"""
+    docstr = movie.Extraction.enemy.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "enemy() method has no docstring"
+
+def test_enemy_docstring_contents():
+    """Does enemy() docstring have the correct sections?"""
+    docstr = movie.Extraction.enemy.__doc__
+    assert "Args:" in docstr, \
+        "enemy() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "enemy() method docstring has no 'Returns:' section"  
+        
+def test_item_docstring_exists():
+    """Does item() have a docstring?"""
+    docstr = movie.Extraction.item.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "item() method has no docstring"
+
+def test_item_docstring_contents():
+    """Does item() docstring have the correct sections?"""
+    docstr = movie.Extraction.item.__doc__
+    assert "Args:" in docstr, \
+        "item() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "item() method docstring has no 'Returns:' section"  
+        
+def test_pet_docstring_exists():
+    """Does pet() have a docstring?"""
+    docstr = movie.Extraction.pet.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "pet() method has no docstring"
+
+def test_pet_docstring_contents():
+    """Does pet() docstring have the correct sections?"""
+    docstr = movie.Extraction.pet.__doc__
+    assert "Args:" in docstr, \
+        "pet() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "pet() method docstring has no 'Returns:' section"  
+        
+def test_weapon_damage_docstring_exists():
+    """Does weapon_damage() have a docstring?"""
+    docstr = movie.Extraction.weapon_damage.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "weapon_damage() method has no docstring"
+
+def test_weapon_damage_docstring_contents():
+    """Does weapon_damage() docstring have the correct sections?"""
+    docstr = movie.Extraction.weapon_damage.__doc__
+    assert "Args:" in docstr, \
+        "weapon_damage() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "weapon_damage() method docstring has no 'Returns:' section"  
+        
+def test_damage_dealt_docstring_exists():
+    """Does damage_dealt() have a docstring?"""
+    docstr = movie.Extraction.damage_dealt.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "damage_dealt() method has no docstring"
+
+def test_damage_dealt_docstring_contents():
+    """Does damage_dealt() docstring have the correct sections?"""
+    docstr = movie.Extraction.damage_dealt.__doc__
+    assert "Args:" in docstr, \
+        "damage_dealt() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "damage_dealt() method docstring has no 'Returns:' section"  
+        
+def test_enemy_hp_docstring_exists():
+    """Does enemy_hp() have a docstring?"""
+    docstr = movie.Extraction.enemy_hp.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "enemy_hp() method has no docstring"
+
+def test_enemy_hp_docstring_contents():
+    """Does enemy_hp() docstring have the correct sections?"""
+    docstr = movie.Extraction.enemy_hp.__doc__
+    assert "Args:" in docstr, \
+        "enemy_hp() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "enemy_hp() method docstring has no 'Returns:' section"  
+
+def test_battle_docstring_exists():
+    """Does battle() have a docstring?"""
+    docstr = movie.battle.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "battle() method has no docstring"
+
+def test_battle_docstring_contents():
+    """Does battle() docstring have the correct sections?"""
+    docstr = movie.battle.__doc__
+    assert "Args:" in docstr, \
+        "battle() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "battle() method docstring has no 'Returns:' section"  
+
+def test_main_docstring_exists():
+    """Does main() have a docstring?"""
+    docstr = movie.main.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "main() method has no docstring"
+
+def test_main_docstring_contents():
+    """Does main() docstring have the correct sections?"""
+    docstr = movie.main.__doc__
+    assert "Args:" in docstr, \
+        "main() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "main() method docstring has no 'Returns:' section"  
