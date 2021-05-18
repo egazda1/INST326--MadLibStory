@@ -81,7 +81,7 @@ class Enemy:
             damage(float): the damage implimented by the enemy
             hp(float): representing the enemy's health points
     """ 
-    def __init__(self, name, damage, hp = 500):
+    def __init__(self, name, damage, hp):
         self.name = name
         self.damage = damage
         self.hp = hp
@@ -179,7 +179,7 @@ class Extraction:
         enemy_hp_list = self.df["Hp"].to_list()
         return (random.choice(enemy_hp_list))
         
-def battle(user, opp, pause = 2.0): 
+def battle(user, opp, pause = 3.0): 
     """ Stage a battle between user and enemy.
     
     Args:
@@ -207,12 +207,13 @@ def battle(user, opp, pause = 2.0):
     
     #print conclusion of battle
     if user.hp <= 0 and opp.hp <= 0:
+        print(f"Im sorry, this battle against {opp.name} has ended in a tie.")
         return 0
-    else: 
-        if user.hp < opp.hp:
-            return 0
-        elif user.hp > opp.hp:
-            return 1
+    elif user.hp < opp.hp: 
+        print(f"Im sorry, you lost your battle against {opp.name}.")
+        return 0
+    elif user.hp > opp.hp:
+        return 1
 
 def main():
     """ This is where the story occurs. We will have the main script here.
@@ -234,23 +235,23 @@ def main():
     weapon_damage = extract.weapon_damage()
     
     if gender == "female" or gender == "f":
-        print(f"Once upon a time there was a {age} year old girl named {name}." 
-              f" One day she was walking down a path in/on the" 
-              f" {location} with a {item}.")
+        print(f"Once upon a time there was a {age} year old girl named {name}. " 
+              f"One day she was walking down a path in/on the " 
+              f"{location} with a {item}.")
         
     elif gender == "male" or gender == "m":
-        print(f"Once upon a time there was a {age} year old boy named {name}." 
-              f" One day he was walking down a path in/on the {location} with a"
+        print(f"Once upon a time there was a {age} year old boy named {name}. " 
+              f" One day he was walking down a path in/on the {location} with a "
               f" {item}. ")
     else: 
-        print(f"Once upon a time there was a {age} year old person named {name}."
-              f" One day they were walking down a path in/on the {location}"
+        print(f"Once upon a time there was a {age} year old person named {name}. "
+              f" One day they were walking down a path in/on the {location} "
               f" with a {item}. ") 
       
-    print(f"As they were walking down the path they were approached by a man who" 
-         f"told them they must defeat 3 people to win the ultimate prize. They" 
-         f"continued down the path and were first approached by an unidentified figure." 
-         f"As they got closer they realized it was {enemy_name}. They pulled out their {weapon}" 
+    print(f"As they were walking down the path they were approached by a man who " 
+         f"told them they must defeat 3 people to win the ultimate prize. They " 
+         f"continued down the path and were first approached by an unidentified figure. " 
+         f"As they got closer they realized it was {enemy_name}. They pulled out their {weapon} " 
          f" and attacked them. Their first battle started.")
     
     
@@ -259,25 +260,52 @@ def main():
     
     battle(user, enemy)
     if battle(user, enemy) == 1:
-        print(f"Congrats {name}, you have defeated your first enemy. Continue" 
+        print(f"Congrats {name}, you have defeated your first enemy. Continue " 
               f"along the path to find your next battle.")
         print()
-        print(f"As they walked down the path they were soon stopped by another"
-              f"person. They realized this person was {enemy}. They quickly "
+        print(f"As they walked down the path they were soon stopped by another "
+              f"person. They realized this person was {enemy.name}. They quickly "
               f"pulled out their {weapon} and the second battle began.")
-        battle(user,enemy)
-        if battle(user, enemy) == 1:
+        
+        #create new enemy
+        enemy_name2 = extract.enemy()
+        enemy_hp2 = extract.enemy_hp()
+        damage_dealt2 = extract.damage_dealt()
+            
+        enemy2 = Get2(enemy_name2, damage_dealt2, enemy_hp2).get_enemy(enemy_name)
+        
+        #run battle 
+        battle(user,enemy2)
+        
+        if battle(user, enemy2) == 1:
             print(f"Congrats {name}, you have defeated your second enemy." 
-                  f"You have one more to go. Continue down the path to find your" 
-                  f"final battle. Not long after they were met with {enemy}," 
-                  f"their third and final enemy. They pulled out their {weapon}"
+                  f"You have one more to go. Continue down the path to find your " 
+                  f"final battle. Not long after they were met with {enemy2.name}, " 
+                  f"their third and final enemy. They pulled out their {weapon} "
                   f"and the third battle began.")
-            battle(user,enemy)
-            if battle(user, enemy) == 1:
-                print(f"Congrats {name}, you have defeated your three enemies" 
+            
+            #create new enemy
+            enemy_name3 = extract.enemy()
+            enemy_hp3 = extract.enemy_hp()
+            damage_dealt3 = extract.damage_dealt()
+            
+            enemy3 = Get2(enemy_name3, damage_dealt3, enemy_hp3).get_enemy(enemy_name)
+        
+            #run battle 
+            battle(user,enemy3)
+            if battle(user, enemy3) == 1:
+                
+                print(f"Congrats {name}, you have defeated your three enemies " 
                       f"and have been rewarded the ultimate prize, a {item}.")
+            
+            elif battle(user, enemy3) == 0:
+                print(f"Your story is completed.")
+                
+        elif battle(user, enemy2) == 0:
+            print(f"Your story is completed.")
+            
     elif battle(user, enemy) == 0:
-        print(f"Im sorry {name}, you lost your battle. Your story is completed.")    
+        print(f"Your story is completed.")    
 
 if __name__ == "__main__":
     main()
