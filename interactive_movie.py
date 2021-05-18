@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 
-def main():
+def main(user_name, enemy_name):
     """ This is where the story occurs. We will have the main script here.
         Side effect: printing story
     """
@@ -28,12 +28,41 @@ def main():
         print(f"Once upon a time there was a {age} year old person named {name}."
               f" One day they were walking down a path in/on the {location}"
               f" with a {item}. ") 
+      
+    print(f"As they were walking down the path they were approached by a man who" 
+         f"told them they must defeat 3 people to win the ultimate prize. They" 
+         f"continued down the path and were first approached by an unidentified figure." 
+         f"As they got closer they realized it was {enemy}. They pulled out their {weapon}" 
+         f" and attacked them. Their first battle started.")
+    
+    enemy = ClassName.get_enemy(enemy_name)     
+    user = ClassName.get_user(user_name)
+    
+    
+    battle(user, enemy)
+    if battle(user, enemy) == 1:
+        print(f"Congrats {name}, you have defeated your first enemy. Continue" 
+              f"along the path to find your next battle. As they walked down the" 
+              f"dark path they were soon stopped by another person. They realized" 
+              f"this person was {enemy}. They quickly pulled out their {weapon}"
+              f"and the second battle began.")
+        battle(user,enemy)
+        if battle(user, enemy) == 1:
+            print(f"Congrats {name}, you have defeated your second enemy." 
+                  f"You have one more to go. Continue down the path to find your" 
+                  f"final battle. Not long after they were met with {enemy}," 
+                  f"their third and final enemy. They pulled out their {weapon}"
+                  f"and the third battle began.")
+            battle(user,enemy)
+            if battle(user, enemy) == 1:
+                print(f"Congrats {name}, you have defeated your three enemies" 
+                      f"and have been rewarded the ultimate prize, a {item}.")
+    elif battle(user, enemy) == 0:
+        print(f"Im sorry {name}, you lost your battle. Your story is completed.")
         
-   
-   # As she was walking down the path, she"
-             # f" was approached by an unidentified figure. At first she couldn't"
-             # f" see who it was, but as she got closer she realized it was {enemy}."
-             # f" She trembled in fear. She used her {item} to attack them.
+
+    
+    
     
     # make the storyline a sort of quest.
     # recomendations (you can do other stuff)
