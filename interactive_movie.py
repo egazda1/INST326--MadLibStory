@@ -18,15 +18,24 @@ def main():
     if gender == "female" or gender == "f":
         print(f"Once upon a time there was a {age} year old girl named {name}." 
               f" One day she was walking down a path in/on the" 
-              f" {location} with a {item}.")
+              f" {location} with a {item}. As she was walking down the path, she"
+              f" was approached by an unidentified figure. At first she couldn't"
+              f" see who it was, but as she got closer she realized it was {enemy}."
+              f" She trembled in fear. She used her {item} to attack them.")
     elif gender == "male" or gender == "m":
         print(f"Once upon a time there was a {age} year old boy named {name}." 
               f" One day he was walking down a path in/on the {location} with a"
-              f" {item}.")
+              f" {item}. As he was walking down the path, he"
+              f" was approached by an unidentified figure. At first he couldn't"
+              f" see who it was, but as he got closer he realized it was {enemy}."
+              f" He trembled in fear. He used her {item} to attack them.")
     else: 
         print(f"Once upon a time there was a {age} year old person named {name}."
               f" One day they were walking down a path in/on the {location}"
-              f" with a {item}.") 
+              f" with a {item}. As they were walking down the path, they"
+              f" were approached by an unidentified figure. At first they couldn't"
+              f" see who it was, but as they got closer they realized it was {enemy}."
+              f" They trembled in fear. They used their {item} to attack them.") 
     
     # make the storyline a sort of quest.
     # recomendations (you can do other stuff)
