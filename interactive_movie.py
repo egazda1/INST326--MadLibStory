@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 
-def main(user_name, enemy_name):
+def main():
     """ This is where the story occurs. We will have the main script here.
         Side effect: printing story
     """
@@ -14,6 +14,8 @@ def main(user_name, enemy_name):
     
     location = extract.location()
     item = extract.item()
+    weapon = extract.weapon()
+    enemy_name = extract.enemy()
     
     if gender == "female" or gender == "f":
         print(f"Once upon a time there was a {age} year old girl named {name}." 
@@ -32,20 +34,21 @@ def main(user_name, enemy_name):
     print(f"As they were walking down the path they were approached by a man who" 
          f"told them they must defeat 3 people to win the ultimate prize. They" 
          f"continued down the path and were first approached by an unidentified figure." 
-         f"As they got closer they realized it was {enemy}. They pulled out their {weapon}" 
+         f"As they got closer they realized it was {enemy_name}. They pulled out their {weapon}" 
          f" and attacked them. Their first battle started.")
     
     enemy = ClassName.get_enemy(enemy_name)     
-    user = ClassName.get_user(user_name)
+    user = ClassName.get_user(name)
     
     
     battle(user, enemy)
     if battle(user, enemy) == 1:
         print(f"Congrats {name}, you have defeated your first enemy. Continue" 
-              f"along the path to find your next battle. As they walked down the" 
-              f"dark path they were soon stopped by another person. They realized" 
-              f"this person was {enemy}. They quickly pulled out their {weapon}"
-              f"and the second battle began.")
+              f"along the path to find your next battle.")
+        print()
+        print(f"As they walked down the path they were soon stopped by another"
+              f"person. They realized this person was {enemy}. They quickly "
+              f"pulled out their {weapon} and the second battle began.")
         battle(user,enemy)
         if battle(user, enemy) == 1:
             print(f"Congrats {name}, you have defeated your second enemy." 
@@ -60,13 +63,29 @@ def main(user_name, enemy_name):
     elif battle(user, enemy) == 0:
         print(f"Im sorry {name}, you lost your battle. Your story is completed.")
         
+class get1:
+    def __init__(self, user_name, weapon_damage, user_hp = 500):
+        self.name = user_name
+        self.damage = weapon_damage
+        self.hp = user_hp
+    
+    def get_user(self, name):
+        name = self.name
+        damage = self.damage
+        hp = self.hp
+        return User(name, damage, hp)
 
+class get2:
+    def __init__(self, enemy_name, enemy_damage, enemy_hp):
+        self.name = enemy_name
+        self.damage = enemy_damage
+        self.hp = enemy_hp
     
-    
-    
-    # make the storyline a sort of quest.
-    # recomendations (you can do other stuff)
-    # someone came to user with quest. get to __ but have to defeat 3 enemies on the way
+    def get_enemy(self, name):
+        name = self.name
+        damage = self.damage
+        hp = self.hp
+        return Enemy(name, damage, hp)
     
 class Person:
     """ Ask users to input their information, such as name, age and gender so they can become part of the game.
