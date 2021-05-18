@@ -40,7 +40,7 @@ def test_get2_docstring_contents():
     assert "Attributes:" in movie.Get2.__doc__, \
         "Get2 class docstring has no 'Attributes:' section"
 
-    def test_get_enemy_docstring_exists():
+def test_get_enemy_docstring_exists():
     """Does get_enemy() have a docstring?"""
     docstr = movie.Get2.get_enemy.__doc__
     assert isinstance(docstr, str) and len(docstr) > 0, \
@@ -95,7 +95,7 @@ def test_return_age_docstring_contents():
 
 def test_return_gender_docstring_exists():
     """Does return_gender() have a docstring?"""
-    docstr = movie.Person.retrun_gender.__doc__
+    docstr = movie.Person.return_gender.__doc__
     assert isinstance(docstr, str) and len(docstr) > 0, \
         "return_gender() method has no docstring"
 
@@ -106,3 +106,53 @@ def test_return_gender_docstring_contents():
         "return_gender() method docstring has no 'Args:' section"
     assert "Side effects:" in docstr, \
         "return_gender() method docstring has no 'Side effects:' section"
+        
+def test_user_docstring_exists():
+    """Does User class have a class docstring?"""
+    docstr = movie.User.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "User class has no class docstring"
+
+def test_user_docstring_contents():
+    """Does User class docstring have an Attributes: section?"""
+    assert "Attributes:" in movie.User.__doc__, \
+        "User class docstring has no 'Attributes:' section"
+
+def test_attack_docstring_exists():
+    """Does attack() have a docstring?"""
+    docstr = movie.User.attack.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "attack() method has no docstring"
+        
+def test_attack_docstring_contents():
+    """Does attack() docstring have the correct sections?"""
+    docstr = movie.User.attack.__doc__
+    assert "Args:" in docstr, \
+        "attack() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "attack() method docstring has no 'Returns:' section"
+
+def test_enemy_docstring_exists():
+    """Does Enemy class have a class docstring?"""
+    docstr = movie.Enemy.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "Enemy class has no class docstring"
+    
+def test_enemy_docstring_contents():
+    """Does Enemy class docstring have an Attributes: section?"""
+    assert "Attributes:" in movie.Enemy.__doc__, \
+        "Enemy class docstring has no 'Attributes:' section"
+
+def test_attack_enemy_docstring_exists():
+    """Does attack() have a docstring?"""
+    docstr = movie.Enemy.attack.__doc__
+    assert isinstance(docstr, str) and len(docstr) > 0, \
+        "attack() method has no docstring"
+
+def test_attack_enemy_docstring_contents():
+    """Does attack() docstring have the correct sections?"""
+    docstr = movie.Enemy.attack.__doc__
+    assert "Args:" in docstr, \
+        "attack() method docstring has no 'Args:' section"
+    assert "Returns:" in docstr, \
+        "attack() method docstring has no 'Returns:' section"
