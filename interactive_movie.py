@@ -40,7 +40,6 @@ def main():
     enemy = ClassName.get_enemy(enemy_name)     
     user = ClassName.get_user(name)
     
-    
     battle(user, enemy)
     if battle(user, enemy) == 1:
         print(f"Congrats {name}, you have defeated your first enemy. Continue" 
@@ -154,6 +153,13 @@ class Enemy:
         Side effects:
             the printing of a line  
         """
+        if random == 0:
+            print(f"{self.name} fails to do damage to {opponent.name}.")
+        elif random == 1:
+            damage = 
+            damage = self.damage_dealt
+            opponent.hp = opponent.hp - damage
+            print(f"{self.name} does {damage} damage to {opponent.name}.")
         
 class Extraction:
     """ This is where we collect the random infomation from the csv file to
