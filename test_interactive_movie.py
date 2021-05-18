@@ -4,6 +4,68 @@ import random
 import re
 import interactive_movie as movie
 
+@fixture
+def user1():
+    return movie.User("Vincent", 120)
+
+@fixture
+def user2():
+    return movie.User("Lenny", 99)
+
+@fixture
+def user3():
+    return movie.User("Gina", 100)
+
+
+def test_user_name(user1):
+    """Is the User's name attribute assigned as expected?"""
+    assert hasattr(user1, "name"), "User has no 'name' attribute"
+    assert user1.name == "Vincent", \
+        f"name attribute has unexpected value {user1.name}"
+    
+def test_user_damage(user1):
+    """Is the User's damage attribute assigned as expected?"""
+    assert hasattr(user1, "hp"), "User has no 'damage' attribute"
+    assert user1.damage == approx(120), \
+        f"hp attribute has unexpected value {user1.damage}"
+    
+def test_user_hp(user1):
+    """Is the User's hp attribute assigned as expected?"""
+    assert hasattr(user1, "hp"), "User has no 'hp' attribute"
+    assert user1.hp == approx(500), \
+        f"hp attribute has unexpected value {user1.hp}"
+    
+@fixture
+def enemy1():
+    return movie.Enemy("Mr. Crocker", 60, 300)
+
+@fixture
+def enemy2():
+    return movie.Enemy("Mr. Burns", 75, 400)
+
+@fixture
+def enemy3():
+    return movie.Enemy("Joker", 87, 500)
+    
+def test_enemy_name(enemy1):
+    """Is the Enemy's name attribute assigned as expected?"""
+    assert hasattr(enemy1, "name"), "Enemy has no 'name' attribute"
+    assert enemy1.name == "Mr. Crocker", \
+        f"name attribute has unexpected value {enemy1.name}"
+    
+def test_enemy_damage(enemy1):
+    """Is the User's damage attribute assigned as expected?"""
+    assert hasattr(enemy1, "hp"), "Enemy has no 'damage' attribute"
+    assert enemy1.damage == approx(60), \
+        f"hp attribute has unexpected value {enemy1.damage}"
+    
+def test_enemy_hp(enemy1):
+    """Is the User's hp attribute assigned as expected?"""
+    assert hasattr(enemy1, "hp"), "Enemy has no 'hp' attribute"
+    assert enemy1.hp == approx(300), \
+        f"hp attribute has unexpected value {enemy1.hp}"
+
+
 def test_get1_docstring_exists():
     """Does Get1 class have a class docstring?"""
     docstr = movie.Get1.__doc__
