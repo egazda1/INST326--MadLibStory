@@ -253,16 +253,16 @@ def main():
     if gender == "female" or gender == "f":
         print(f"Once upon a time there was a {age} year old girl named {name}. " 
               f"One day she was walking down a path in/on the " 
-              f"{location} with a {item}.")
+              f"{location} with a {item} and her {pet}.")
         
     elif gender == "male" or gender == "m":
         print(f"Once upon a time there was a {age} year old boy named {name}. " 
               f" One day he was walking down a path in/on the {location} with a "
-              f" {item}.")
+              f" {item} and his {pet}.")
     else: 
         print(f"Once upon a time there was a {age} year old person named {name}. "
               f" One day they were walking down a path in/on the {location} "
-              f" with a {item}. ") 
+              f" with a {item} and their {pet}. ") 
     print()
     sleep(3.0)
       
