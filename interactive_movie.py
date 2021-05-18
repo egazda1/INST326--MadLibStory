@@ -3,7 +3,8 @@ import random
 
 def main():
     """ This is where the story occurs. We will have the main script here.
-        Side effect: printing story
+        Side effects:
+             print(str): printing story
     """
     person = Person()
     extract = Extraction("extraction1.xlsx")
@@ -80,9 +81,9 @@ class Person:
     def attack(self, opponent):
         """ Used to set attributes as objects.        
         Args:  
-            opponent: the user's opponent
+            opponent(str): the user's opponent
         Side effects:
-            the printing of a line
+            print(str): the printing of a line
         """
         damage = self.weapon_damage
         opponent.hp = opponent.hp - damage
@@ -104,20 +105,27 @@ class Enemy:
     def attack(self, opponent):
         """ Used to set attributes as objects.        
         Args:  
-            opponent: the enemy's opponent
+            opponent(str): the enemy's opponent
         Side effects:
-            the printing of a line  
+            print(str): the printing of a line  
         """
+        random = randint(0,1)
+        if random == 0:
+            print(f"{self.name} fails to do damage to {opponent.name}.")
+        elif random == 1:
+            damage = 
+            opponent.hp = opponent.hp - damage
+            print(f"{self.name} does {damage} damage to {opponent.name}.")
         
 class Extraction:
     """ This is where we collect the random infomation from the csv file to
         incorprate into the story
-        
-         
+        Attributes:
+             
     """
     def __init__(self, filepath):
         """initializing new path object
-            attributes:
+            Attributes:
                 filepath(str): location of csv file
         """
         self.df = pd.read_excel(filepath)
