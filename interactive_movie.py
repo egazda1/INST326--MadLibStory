@@ -3,8 +3,7 @@ import random
 
 def main():
     """ This is where the story occurs. We will have the main script here.
-        Side effects:
-             print(str): printing story
+        Side effect: printing story
     """
     person = Person()
     extract = Extraction("extraction1.xlsx")
@@ -19,24 +18,22 @@ def main():
     if gender == "female" or gender == "f":
         print(f"Once upon a time there was a {age} year old girl named {name}." 
               f" One day she was walking down a path in/on the" 
-              f" {location} with a {item}. As she was walking down the path, she"
-              f" was approached by an unidentified figure. At first she couldn't"
-              f" see who it was, but as she got closer she realized it was {enemy}."
-              f" She trembled in fear. She used her {item} to attack them.")
+              f" {location} with a {item}.")
+        
     elif gender == "male" or gender == "m":
         print(f"Once upon a time there was a {age} year old boy named {name}." 
               f" One day he was walking down a path in/on the {location} with a"
-              f" {item}. As he was walking down the path, he"
-              f" was approached by an unidentified figure. At first he couldn't"
-              f" see who it was, but as he got closer he realized it was {enemy}."
-              f" He trembled in fear. He used her {item} to attack them.")
+              f" {item}. ")
     else: 
         print(f"Once upon a time there was a {age} year old person named {name}."
               f" One day they were walking down a path in/on the {location}"
-              f" with a {item}. As they were walking down the path, they"
-              f" were approached by an unidentified figure. At first they couldn't"
-              f" see who it was, but as they got closer they realized it was {enemy}."
-              f" They trembled in fear. They used their {item} to attack them.") 
+              f" with a {item}. ") 
+        
+   
+   # As she was walking down the path, she"
+             # f" was approached by an unidentified figure. At first she couldn't"
+             # f" see who it was, but as she got closer she realized it was {enemy}."
+             # f" She trembled in fear. She used her {item} to attack them.
     
     # make the storyline a sort of quest.
     # recomendations (you can do other stuff)
@@ -65,7 +62,7 @@ class Person:
         return self.gender
     
 
- class User:
+class User:
     """ Collect the information on user and turn it into an instance. 
 
         Attributes:
@@ -81,9 +78,9 @@ class Person:
     def attack(self, opponent):
         """ Used to set attributes as objects.        
         Args:  
-            opponent(str): the user's opponent
+            opponent: the user's opponent
         Side effects:
-            print(str): the printing of a line
+            the printing of a line
         """
         damage = self.weapon_damage
         opponent.hp = opponent.hp - damage
@@ -105,27 +102,20 @@ class Enemy:
     def attack(self, opponent):
         """ Used to set attributes as objects.        
         Args:  
-            opponent(str): the enemy's opponent
+            opponent: the enemy's opponent
         Side effects:
-            print(str): the printing of a line  
+            the printing of a line  
         """
-        random = randint(0,1)
-        if random == 0:
-            print(f"{self.name} fails to do damage to {opponent.name}.")
-        elif random == 1:
-            damage = self.damage_dealt
-            opponent.hp = opponent.hp - damage
-            print(f"{self.name} does {damage} damage to {opponent.name}.")
         
 class Extraction:
     """ This is where we collect the random infomation from the csv file to
         incorprate into the story
-        Attributes:
-             
+        
+         
     """
     def __init__(self, filepath):
         """initializing new path object
-            Attributes:
+            attributes:
                 filepath(str): location of csv file
         """
         self.df = pd.read_excel(filepath)
@@ -221,13 +211,16 @@ def battle(user, opp, pause = 2.0):
         sleep(pause)
     
     #print conclusion of battle
-    if user.hp <= 0 and .hp <= 0:
+    if user.hp <= 0 and opp.hp <= 0:
         print("The battle ends in a draw. You have not completed your quest.")
+        return 0
     else: 
         if user.hp < opp.hp:
             print("%s wins. You have not completed your quest." % (opp.name))
+            return 0
         elif user.hp > opp.hp:
             print("%s wins! You get to move on." % (user.name))
-
+            return 1
+    
 if __name__ == "__main__":
     main()
