@@ -64,27 +64,26 @@ class Person:
         self.gender = str(input("Enter your gender: "))
     
     def return_name(self):
-        """ return name information of the user.
+        """ Return name information of the user.
         Returns:
             self.name(str): name of user.
         """
         return self.name
         
     def return_age(self):
-       """ return age information of the user.
+       """ Return age information of the user.
         Returns:
             self.age(int): age of user.
         """
         return self.age
     
     def return_gender(self):
-        """ return gender information of the user.
+        """ Return gender information of the user.
         Returns:
             self.gender(str): gender of user.
         """
         return self.gender
     
-
 class User:
     """ Collect the information on user and turn it into an instance. 
     Attributes:
