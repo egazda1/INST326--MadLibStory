@@ -14,9 +14,7 @@ def test_Person_init():
         assert movie.Person.return_age() == (22)
         assert movie.Person.return_gender() == ("m")
 
-
 def test_attack(capsys):
-    """Does the attack function print the right result?"""
     test_user = movie.User("George", 60, 700)
     test_enemy = movie.Enemy("Joker", 86, 450)
     test_user.attack(test_enemy)
