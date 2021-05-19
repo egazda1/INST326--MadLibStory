@@ -3,26 +3,14 @@ from pytest import approx, fixture
 import random
 import re
 import interactive_movie as movie
+import builtins
+from unittest import mock
 
-class TestPerson:
-    
-    def test_return_name(self):
-        module.input = lambda: 'James'
-        output = module.return_name()
-        assert output == 'James'
-
-    def test_return_age(self):
-        module.input = lambda: '22'
-        output = module.return_age()
-        assert output == '22'
-        
-    def test_return_gender(self):
-        module.input = lambda: 'm'
-        output = module.return_gender()
-        assert output == 'm'
-
-    def teardown_method(self, method):
-        module.input = input
+def test_Person_init():
+    with mock.patch("builtins.input", side_effect=["James", 22, "m"]):
+        assert movie.Person.return_name() == ("James")
+        assert movie.Person.return_age() == (22)
+        assert movie.Person.return_gender() == ("m")
 
 @fixture
 def user1():
@@ -85,7 +73,6 @@ def test_enemy_hp(enemy1):
         f"hp attribute has unexpected value {enemy1.hp}"
 
 #docstrings
-
 def test_get1_docstring_exists():
     """Does Get1 class have a class docstring?"""
     docstr = movie.Get1.__doc__
