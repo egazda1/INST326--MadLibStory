@@ -1,6 +1,8 @@
 """ pytest for interactive_movie.py"""
 from pytest import approx, fixture
 import random
+import pytest
+import myproject
 import re
 import interactive_movie as movie
 import builtins
@@ -11,6 +13,16 @@ def test_Person_init():
         assert movie.Person.return_name() == ("James")
         assert movie.Person.return_age() == (22)
         assert movie.Person.return_gender() == ("m")
+
+
+def test_attack(capsys):
+    """Does the attack function print the right result?"""
+    test_user = movie.User("George", 60, 700)
+    test_enemy = movie.Enemy("Joker", 86, 450)
+    test_user.attack(test_enemy)
+    outerr = capsys.readouterr()
+    out = outerr.out
+    assert out == "George does 60 points of damage to Joker"
 
 @fixture
 def user1():
