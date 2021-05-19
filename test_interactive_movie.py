@@ -65,7 +65,7 @@ def test_enemy_hp(enemy1):
     assert enemy1.hp == approx(300), \
         f"hp attribute has unexpected value {enemy1.hp}"
 
-
+#docstrings
 def test_get1_docstring_exists():
     """Does Get1 class have a class docstring?"""
     docstr = movie.Get1.__doc__
@@ -113,8 +113,8 @@ def test_get_enemy_docstring_contents():
     docstr = movie.Get2.get_enemy.__doc__
     assert "Args:" in docstr, \
         "get_enemy() method docstring has no 'Args:' section"
-    assert "Side effects:" in docstr, \
-        "get_enemy() method docstring has no 'Side effects:' section"
+    assert "Returns:" in docstr, \
+        "get_enemy() method docstring has no 'Returns:' section"
     
 def test_person_docstring_exists():
     """Does Person class have a class docstring?"""
@@ -138,8 +138,8 @@ def test_return_name_docstring_contents():
     docstr = movie.Person.return_name.__doc__
     assert "Args:" in docstr, \
         "return_name() method docstring has no 'Args:' section"
-    assert "Side effects:" in docstr, \
-        "return_name() method docstring has no 'Side effects:' section"
+    assert "Returns:" in docstr, \
+        "return_name() method docstring has no 'Returns:' section"
     
 def test_return_age__docstring_exists():
     """Does return_age() have a docstring?"""
@@ -152,8 +152,8 @@ def test_return_age_docstring_contents():
     docstr = movie.Person.return_age.__doc__
     assert "Args:" in docstr, \
         "return_age() method docstring has no 'Args:' section"
-    assert "Side effects:" in docstr, \
-        "return_age() method docstring has no 'Side effects:' section"
+    assert "Returns:" in docstr, \
+        "return_name() method docstring has no 'Returns:' section"
 
 def test_return_gender_docstring_exists():
     """Does return_gender() have a docstring?"""
@@ -166,8 +166,8 @@ def test_return_gender_docstring_contents():
     docstr = movie.Person.return_gender.__doc__
     assert "Args:" in docstr, \
         "return_gender() method docstring has no 'Args:' section"
-    assert "Side effects:" in docstr, \
-        "return_gender() method docstring has no 'Side effects:' section"
+    assert "Returns:" in docstr, \
+        "return_name() method docstring has no 'Returns:' section"
         
 def test_user_docstring_exists():
     """Does User class have a class docstring?"""
@@ -191,8 +191,8 @@ def test_attack_docstring_contents():
     docstr = movie.User.attack.__doc__
     assert "Args:" in docstr, \
         "attack() method docstring has no 'Args:' section"
-    assert "Returns:" in docstr, \
-        "attack() method docstring has no 'Returns:' section"
+    assert "Side Effects:" in docstr, \
+        "attack() method docstring has no 'Side Effects:' section"
 
 def test_enemy_docstring_exists():
     """Does Enemy class have a class docstring?"""
@@ -216,8 +216,8 @@ def test_attack_enemy_docstring_contents():
     docstr = movie.Enemy.attack.__doc__
     assert "Args:" in docstr, \
         "attack() method docstring has no 'Args:' section"
-    assert "Returns:" in docstr, \
-        "attack() method docstring has no 'Returns:' section"
+    assert "Side Effects:" in docstr, \
+        "attack() method docstring has no 'Side Effects:' section"
 
 def test_extraction_docstring_exists():
     """Does Extraction class have a class docstring?"""
@@ -354,7 +354,9 @@ def test_battle_docstring_contents():
     assert "Args:" in docstr, \
         "battle() method docstring has no 'Args:' section"
     assert "Returns:" in docstr, \
-        "battle() method docstring has no 'Returns:' section"  
+        "battle() method docstring has no 'Returns:' section"
+    assert "Side Effects:" in docstr, \
+        "battle() method docstring has no 'Side Effects:' section"
 
 def test_main_docstring_exists():
     """Does main() have a docstring?"""
@@ -367,5 +369,5 @@ def test_main_docstring_contents():
     docstr = movie.main.__doc__
     assert "Args:" in docstr, \
         "main() method docstring has no 'Args:' section"
-    assert "Returns:" in docstr, \
-        "main() method docstring has no 'Returns:' section"  
+    assert "Side Effects:" in docstr, \
+        "main() method docstring has no 'Side Effects:' section"  
