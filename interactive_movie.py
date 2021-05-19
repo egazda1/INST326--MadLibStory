@@ -19,7 +19,7 @@ class Get1:
         Args:  
             name(str): the user's name.
         Returns:
-            the printing of information of the user.
+            list(str): a list of information of the user.
         """
         name = self.name
         damage = self.damage
@@ -43,7 +43,7 @@ class Get2:
         Args:  
             name(str): the enemy's name.
         Returns:
-            the printing of information of the enemy.
+            list(str): a list of information of the enemy.
         """
         name = self.name
         damage = self.damage
@@ -51,7 +51,8 @@ class Get2:
         return Enemy(name, damage, hp)
     
 class Person:
-    """ Ask users to input their information, such as name, age and gender so they can become part of the game.
+    """ Ask users to input their information, such as name, age and gender
+        so they can become part of the game.
     Attributes:
         name(str): name of the user.
         age(int): age of the user.
@@ -203,9 +204,9 @@ def battle(user, opp, pause = 4.0):
         opp(str): Name of user, taken from user input.
         pause(float): an amount of time in seconds to pause between attacks in
             a battle. Allows the user time to read the outcome of each attack.
-            Default: 3.0.      
+            Default: 4.0.      
     Side effects:
-        print(string): printing play by play actions of battle
+        print(string): printing play by play actions of battle.
     """
     while user.hp > 0 and opp.hp > 0: 
         # user and enemy attack eachother 
@@ -232,7 +233,8 @@ def battle(user, opp, pause = 4.0):
 
 def main():
     """ This is where the story occurs. We will have the main script here.
-        Side effect: printing story
+    Side effect: 
+        printing story.
     """
     person = Person()
     extract = Extraction("extraction1.xlsx")
