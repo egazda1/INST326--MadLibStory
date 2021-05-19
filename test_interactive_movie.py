@@ -4,6 +4,26 @@ import random
 import re
 import interactive_movie as movie
 
+class TestPerson:
+    
+    def test_return_name(self):
+        module.input = lambda: 'James'
+        output = module.return_name()
+        assert output == 'James'
+
+    def test_return_age(self):
+        module.input = lambda: '22'
+        output = module.return_age()
+        assert output == '22'
+        
+    def test_return_gender(self):
+        module.input = lambda: 'm'
+        output = module.return_gender()
+        assert output == 'm'
+
+    def teardown_method(self, method):
+        module.input = input
+
 @fixture
 def user1():
     return movie.User("Vincent", 120)
@@ -15,7 +35,6 @@ def user2():
 @fixture
 def user3():
     return movie.User("Gina", 100)
-
 
 def test_user_name(user1):
     """Is the User's name attribute assigned as expected?"""
@@ -66,6 +85,7 @@ def test_enemy_hp(enemy1):
         f"hp attribute has unexpected value {enemy1.hp}"
 
 #docstrings
+
 def test_get1_docstring_exists():
     """Does Get1 class have a class docstring?"""
     docstr = movie.Get1.__doc__
@@ -370,4 +390,4 @@ def test_main_docstring_contents():
     assert "Args:" in docstr, \
         "main() method docstring has no 'Args:' section"
     assert "Side Effects:" in docstr, \
-        "main() method docstring has no 'Side Effects:' section"  
+        "main() method docstring has no 'Side Effects:' section"
